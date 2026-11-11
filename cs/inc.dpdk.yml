@@ -152,6 +152,15 @@
     - oid: "/local:/dpdk:/rx_free_thresh:"
       value: "${TE_ENV_DPDK_RX_FREE_THRESH:-0}"
 
+- cond:
+    if: |
+        (0x${TE_PCI_VENDOR_IUT_TST1} = 0x8086) &
+        (0x${TE_PCI_DEVICE_IUT_TST1} = 0x1572)
+    then:
+      - set:
+        - oid: "/local:/dpdk:/rx_free_thresh:"
+          value: "${TE_ENV_DPDK_RX_FREE_THRESH:-16}"
+
 - set:
     - if: 0x${TE_PCI_VENDOR_IUT_TST1} = 0x1924
       oid: "/local:/dpdk:/tso_ip_id_inc_algo:"
