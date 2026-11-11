@@ -149,6 +149,10 @@
       value: "${TE_ENV_DPDK_TSO_CUTOFF_BARRIER:-0}"
 
 - set:
+    - oid: "/local:/dpdk:/rx_free_thresh:"
+      value: "${TE_ENV_DPDK_RX_FREE_THRESH:-0}"
+
+- set:
     - if: 0x${TE_PCI_VENDOR_IUT_TST1} = 0x1924
       oid: "/local:/dpdk:/tso_ip_id_inc_algo:"
       value: "mod15"
