@@ -156,7 +156,8 @@
     if: |
         (0x${TE_PCI_VENDOR_IUT_TST1} = 0x8086) &
         ((0x${TE_PCI_DEVICE_IUT_TST1} = 0x1572) |
-         (0x${TE_PCI_DEVICE_IUT_TST1} = 0x158b))
+         (0x${TE_PCI_DEVICE_IUT_TST1} = 0x158b) |
+         (0x${TE_PCI_DEVICE_IUT_TST1} = 0x159b))
     then:
       - set:
         - oid: "/local:/dpdk:/rx_free_thresh:"
